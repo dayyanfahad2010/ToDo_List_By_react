@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import './todo.css'
+import { useNavigate } from 'react-router-dom'
 export const TodoList = () => {
     const [inputValue,setInput]=useState("")
     const [todos,setTodos]=useState([])
     let usersData=JSON.parse(localStorage.getItem("users"));
     let loggedUserIndex=JSON.parse(localStorage.getItem("loggedin"))
+    let logginUser =JSON.parse(localStorage.getItem("loggedUser"));
+    const navigate =useNavigate();
+    if(!logginUser){
+        navigate("/login")
+    }
     useEffect(() => {
         if (usersData[loggedUserIndex]?.task) {
         setTodos(usersData[loggedUserIndex].task);
@@ -32,7 +38,7 @@ export const TodoList = () => {
     
   return (
       <div className='main_todo_div'>
-        <input type="text" value={inputValue} className='input' placeholder='Write Todo' onChange = {(e)=>
+        <input type="text" value={inputValue} className='todo_input' placeholder='Write Todo' onChange = {(e)=>
             setInput(e.target.value)}
             />
         <button onClick={addTask} className='AddBtn'>Add</button>

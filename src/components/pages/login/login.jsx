@@ -67,7 +67,7 @@ export const Login = () => {
                         })
                     }/>
                 </div>
-                <Link to={"/signup"}>Don't have an account</Link>
+                <Link to={"/signup"} style={{marginLeft:"35px"}}>Don't have an account</Link>
                 <button onClick={handleSubmit}>Login</button>
             </div>
         </div>

@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background: url(../../assets/—Pngtree—grid\ board\ mock\ ups\ for_12147481.jpg);
-    /* background-position: center; */
+    background: url(../../assets/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -21,7 +20,7 @@ body{
     border-radius: 10px;
     background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1));
 }
-.input{
+.todo_input{
     width: 320px;
     padding: 15px 20px;
     border-radius: 18px;

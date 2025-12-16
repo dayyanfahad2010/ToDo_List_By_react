@@ -75,7 +75,7 @@ export const Signup = () => {
                         })
                     }/>
                 </div>
-                    <Link to={"/signin"}>Already have an account</Link>
+                    <Link to={"/login"} style={{marginLeft:"35px"}}>Already have an account</Link>
             </div>
             <button onClick={handleSubmit}>Signup</button>
         </div>
