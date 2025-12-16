@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url(../../assets/—Pngtree—grid\ board\ mock\ ups\ for_12147481.jpg);
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main_todo_div{
+    width: 500px;
+    min-height: 300px;
+    margin: 100px auto;
+    border: 1px solid rgba(0,0,0,0.2);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px;
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1));
+}
+.input{
+    width: 320px;
+    padding: 15px 20px;
+    border-radius: 18px;
+}
+.AddBtn{
+    margin: 0 10px;
+    padding: 17px 30px;
+    border-radius: 20px;
+}
+.Item_div{
+    width: 80%;
+    margin: 30px auto 20px auto;
+    text-align: left;
+    position: relative;
+}
+.Item_text{
+    color: rgb(36, 36, 36);
+    font-weight: 600;
+}
+.Item_div button{
+    padding: 12px 18px;
+    margin: 0 0px 0 0px;
+    position: absolute;
+    border-radius: 17px;
+}
+.Edit_Btn{
+    right: 88px;
+    background-color: #003079;
+    color: white;
+}
+.Delete_Btn{
+    right: 0px;
+    background-color: #a31c1cfd;
+    color: white; 
+}

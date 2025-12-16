@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import './todo.css'
 export const TodoList = () => {
     const [inputValue,setInput]=useState("")
     const [todos,setTodos]=useState([])
@@ -31,11 +31,11 @@ export const TodoList = () => {
     });
     
   return (
-    <div>
-        <input type="text" value={inputValue} placeholder='Write Todo' onChange = {(e)=>
+      <div className='main_todo_div'>
+        <input type="text" value={inputValue} className='input' placeholder='Write Todo' onChange = {(e)=>
             setInput(e.target.value)}
-        />
-        <button onClick={addTask}>Add</button>
+            />
+        <button onClick={addTask} className='AddBtn'>Add</button>
         <div>
             {showTodos}
         </div>
@@ -43,15 +43,28 @@ export const TodoList = () => {
   )
 }
 function TodoListItem({value,itemIndex}){
-    const DeleteItem=(e)=>{
-        const clickBtn=e.target
-        let id=clickBtn.parentNode.id
-        let text=clickBtn.parentNode.textContent
-        alert(text)
-    }
+    let usersData=JSON.parse(localStorage.getItem("users"));
+    let loggedUserIndex=JSON.parse(localStorage.getItem("loggedin"))
+    const EditItem = () => {
+        const updatedText = prompt("Edit Todo", value);
+        if (updatedText !== null && updatedText !== "") {
+            usersData[loggedUserIndex].task[itemIndex] = updatedText;
+            localStorage.setItem("users", JSON.stringify(usersData));
+            window.location.reload(); 
+        }
+    };
+
+    const DeleteItem = () => {
+        usersData[loggedUserIndex].task.splice(itemIndex, 1);
+        localStorage.setItem("users", JSON.stringify(usersData));
+        window.location.reload(); 
+    };
     return(
-        <div>
-            <p id={itemIndex}>{value} <button onClick={DeleteItem}>Edit</button> <button>Delete</button></p>
+        <div className='Item_div'>
+            <p id={itemIndex} className='Item_text'>{value} 
+                <button onClick={EditItem} className='Edit_Btn'>Edit</button> 
+                <button onClick={DeleteItem} className='Delete_Btn'>Delete</button>
+            </p>
         </div>
     )
 }
